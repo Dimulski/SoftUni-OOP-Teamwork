@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HealingPotion.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="LivingCreature.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
