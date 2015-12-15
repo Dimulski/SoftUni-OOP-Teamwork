@@ -46,6 +46,10 @@
     <Compile Include="Engine\LivingCreature.cs" />
     <Compile Include="Engine\Location.cs" />
     <Compile Include="Engine\Player.cs" />
+    <Compile Include="Items\InventoryItem.cs" />
+    <Compile Include="Items\LootItem.cs" />
+    <Compile Include="Items\PlayerQuest.cs" />
+    <Compile Include="Items\QuestCompletionItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Engine\Quest.cs" />
     <Compile Include="Engine\Wapon.cs" />
