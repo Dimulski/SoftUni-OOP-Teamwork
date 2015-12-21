@@ -115,9 +115,10 @@ namespace RPG
             btnSouth.Visible = (newLocation.LocationToSouth != null);
             btnWest.Visible = (newLocation.LocationToWest != null);
 
-            // Display current location name and description
+            // Display current location name, description and picture
             rtbLocation.Text = newLocation.Name + Environment.NewLine;
             rtbLocation.Text += newLocation.Description + Environment.NewLine;
+            pictureBox1.Image = Image.FromFile(newLocation.Name + ".png"); // This could probably be done better with a image property in Location.cs
 
             // Completely heal the player
             _player.CurrentHitPoints = _player.MaximumHitPoints;

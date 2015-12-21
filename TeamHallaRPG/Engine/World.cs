@@ -120,13 +120,13 @@ namespace Engine
             Location magazinaNaLevski = new Location(LOCATION_ID_NKP, "NKP, magazina na Levski", "Lichi si ot kilometri kakvo e. Otpred sedqt nqkolko choveka ot sofiq zapad i obsujdat nablijavashtiq mach");
             magazinaNaLevski.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_1VO_RPU);
 
-            Location purvoRaionno = new Location(LOCATION_ID_1VO_RPU, "1vo raionno", "Policaite tuk imat slavata na edni ot nai-zlobnite v Sofiq.Dosega beshe chuval samo legendi za tova mqsto.");
+            Location purvoRaionno = new Location(LOCATION_ID_1VO_RPU, "1vo raionno", "Policaite tuk imat slavata na edni ot nai-zlobnite v Sofiq. Dosega beshe chuval samo legendi za tova mqsto.");
             purvoRaionno.MonsterLivingHere = MonsterByID(MONSTER_ID_POLICEMAN);
 
             Location stadiona = new Location(LOCATION_ID_STADIONA, "Nacionalen Stadion Vasil Levski", "Na vhoda ima ogromna opashka,po dobre poburzai i si prigotvi bileta",
                 ItemByID(ITEM_ID_BILET_ZA_MACH));
 
-            Location avtobusa = new Location(LOCATION_ID_AVTOBUS, "Avtobus", "Reshavash da se kachish i da vidish kude shte te otvede");
+            Location avtobusa = new Location(LOCATION_ID_AVTOBUS, "Avtobus",  "Reshavash da se kachish i da vidish kude shte te otvede");
 
             Location plovdiv = new Location(LOCATION_ID_PLOVDIV, "Mainatown", "Avtobusa spira i ti izvednuj se okazvash ...v Plovdiv.Horata tuk govorqt stranno i ti razbirash che pribiraneto nqma da e lesno");
             plovdiv.MonsterLivingHere = MonsterByID(MONSTER_ID_BOTEV_FAN);
