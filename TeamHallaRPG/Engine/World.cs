@@ -121,7 +121,7 @@ namespace Engine
             magazinaNaLevski.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_1VO_RPU);
 
             Location purvoRaionno = new Location(LOCATION_ID_1VO_RPU, "1vo raionno", "Policaite tuk imat slavata na edni ot nai-zlobnite v Sofiq.Dosega beshe chuval samo legendi za tova mqsto.");
-           purvoRaionno.MonsterLivingHere = MonsterByID(MONSTER_ID_POLICEMAN);
+            purvoRaionno.MonsterLivingHere = MonsterByID(MONSTER_ID_POLICEMAN);
 
             Location stadiona = new Location(LOCATION_ID_STADIONA, "Nacionalen Stadion Vasil Levski", "Na vhoda ima ogromna opashka,po dobre poburzai i si prigotvi bileta",
                 ItemByID(ITEM_ID_BILET_ZA_MACH));
