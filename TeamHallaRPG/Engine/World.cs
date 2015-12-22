@@ -15,6 +15,8 @@ namespace Engine
         public const int ITEM_ID_POLICEISKA_KASKA = 4;
         public const int ITEM_ID_POLICEISKI_SHTIT = 5;
         public const int ITEM_ID_BUHALKA = 6;
+        public const int ITEM_ID_PALKA = 11;
+        public const int ITEM_ID_PISHTOV = 12;
         public const int ITEM_ID_AMFET = 7;
         public const int ITEM_ID_SHAL_MAINA = 8;
         public const int ITEM_ID_TENISKA_MAINA = 9;
@@ -53,6 +55,8 @@ namespace Engine
             Items.Add(new Item(ITEM_ID_POLICEISKA_KASKA, "Policeiska kaska", "Policeiski kaski"));
             Items.Add(new Item(ITEM_ID_POLICEISKI_SHTIT, "Policeiski shtit", "Policeiski shtitove"));
             Items.Add(new Weapon(ITEM_ID_BUHALKA, "Buhalka", "Buhalki", 3, 10));
+            Items.Add(new Weapon(ITEM_ID_PALKA,"Policeiska palka","Policeiski palki",6,12));
+            Items.Add(new Weapon(ITEM_ID_PISHTOV,"Pishtov","Pishtovi",0,40));
             Items.Add(new HealingPotion(ITEM_ID_AMFET, "Amfet", "Amfeta", 5));
             Items.Add(new Item(ITEM_ID_SHAL_MAINA, "Shal na botev pld", "shalove na botev pld"));
             Items.Add(new Item(ITEM_ID_TENISKA_MAINA, "Teniska na botev pld", "Teniski na botev pld"));
@@ -61,17 +65,20 @@ namespace Engine
 
         private static void PopulateMonsters()
         {
-            Monster cskaFan = new Monster(MONSTER_ID_CSKA_FAN, "Ultras cska", 5, 3, 10, 3, 3);
+            Monster cskaFan = new Monster(MONSTER_ID_CSKA_FAN, "Ultras cska",5, 3, 10, 3, 3);
             cskaFan.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SHAL_SSKA), 75, false));
             cskaFan.LootTable.Add(new LootItem(ItemByID(ITEM_ID_TENISKA_SSKA), 75, true));
 
-            Monster policeman = new Monster(MONSTER_ID_POLICEMAN, "Policai", 5, 3, 10, 3, 3);
-            policeman.LootTable.Add(new LootItem(ItemByID(ITEM_ID_POLICEISKA_KASKA), 75, false));
-            policeman.LootTable.Add(new LootItem(ItemByID(ITEM_ID_POLICEISKI_SHTIT), 75, true));
+            Monster policeman = new Monster(MONSTER_ID_POLICEMAN, "Policai", 5, 3, 10, 6, 6);
+            policeman.LootTable.Add(new LootItem(ItemByID(ITEM_ID_POLICEISKA_KASKA), 50, false));
+            policeman.LootTable.Add(new LootItem(ItemByID(ITEM_ID_POLICEISKI_SHTIT), 50, true));
+            policeman.LootTable.Add(new LootItem(ItemByID(ITEM_ID_PALKA),75,false));
+            policeman.LootTable.Add(new LootItem(ItemByID(ITEM_ID_PISHTOV), 10, false));
 
             Monster botevFan = new Monster(MONSTER_ID_BOTEV_FAN, "Bultras", 20, 5, 40, 10, 10);
-            botevFan.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SHAL_MAINA), 75, true));
+            botevFan.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SHAL_MAINA), 50, true));
             botevFan.LootTable.Add(new LootItem(ItemByID(ITEM_ID_TENISKA_MAINA), 25, false));
+            botevFan.LootTable.Add(new LootItem(ItemByID(ITEM_ID_BUHALKA),50,false));
 
             Monsters.Add(cskaFan);
             Monsters.Add(policeman);

@@ -118,7 +118,7 @@ namespace RPG
             // Display current location name, description and picture
             rtbLocation.Text = newLocation.Name + Environment.NewLine;
             rtbLocation.Text += newLocation.Description + Environment.NewLine;
-            pictureBox1.Image = Image.FromFile(newLocation.Name + ".png"); // This could probably be done better with a image property in Location.cs
+            locationPictureBox.Image = Image.FromFile(newLocation.Name + ".jpg"); // This could probably be done better with a image property in Location.cs
 
             // Completely heal the player
             _player.CurrentHitPoints = _player.MaximumHitPoints;
@@ -213,6 +213,9 @@ namespace RPG
                 cboPotions.Visible = true;
                 btnUseWeapon.Visible = true;
                 btnUsePotion.Visible = true;
+                weaponPictureBox.Visible = true;
+                consumablePictureBox.Visible = true;
+                
             }
             else
             {
@@ -222,6 +225,8 @@ namespace RPG
                 cboPotions.Visible = false;
                 btnUseWeapon.Visible = false;
                 btnUsePotion.Visible = false;
+                weaponPictureBox.Visible = false;
+                consumablePictureBox.Visible = false;
             }
 
             // Refresh player's weapons combobox
@@ -250,9 +255,10 @@ namespace RPG
 
             if (weapons.Count == 0)
             {
-                // The player doesn't have any weapons, so hide the weapon combobox and "Use" button
+                // The player doesn't have any weapons, so hide the weapon combobox, "Use" button and picturebox
                 cboWeapons.Visible = false;
                 btnUseWeapon.Visible = false;
+                weaponPictureBox.Visible = false;
             }
             else
             {
@@ -290,9 +296,11 @@ namespace RPG
 
             if (healingPotions.Count == 0)
             {
-                // The player doesn't have any potions, so hide the potion combobox and "Use" button
+                // The player doesn't have any potions, so hide the potion combobox, "Use" button and picturebox
                 cboPotions.Visible = false;
                 btnUsePotion.Visible = false;
+                consumablePictureBox.Visible = false; //
+
             }
             else
             {
@@ -432,7 +440,7 @@ namespace RPG
             }
 
             // Display message
-            rtbMessages.Text += "You drink a " + potion.Name + Environment.NewLine;
+            rtbMessages.Text += "You consume a " + potion.Name + Environment.NewLine;
 
             // Monster gets their turn to attack
 
@@ -466,14 +474,15 @@ namespace RPG
             rtbMessages.ScrollToCaret();
         }
 
-        private void SuperAdventure_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            File.WriteAllText(PLAYER_DATA_FILE_NAME, _player.ToXmlString());
-        }
+        //private void RPG_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    File.WriteAllText(PLAYER_DATA_FILE_NAME, _player.ToXmlString());
+        //}
 
         private void cboWeapons_SelectedIndexChanged(object sender, EventArgs e)
         {
             _player.CurrentWeapon = (Weapon)cboWeapons.SelectedItem;
+            weaponPictureBox.Image = Image.FromFile(_player.CurrentWeapon.Name + ".jpg");
         }
     }
 }

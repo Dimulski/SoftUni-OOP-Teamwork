@@ -63,9 +63,19 @@ namespace RPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap teniskaSska {
+        internal static System.Drawing.Bitmap Amfet {
             get {
-                object obj = ResourceManager.GetObject("teniskaSska", resourceCulture);
+                object obj = ResourceManager.GetObject("Amfet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Noj {
+            get {
+                object obj = ResourceManager.GetObject("Noj", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
